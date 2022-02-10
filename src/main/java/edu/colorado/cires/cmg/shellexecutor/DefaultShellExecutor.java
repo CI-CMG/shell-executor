@@ -6,9 +6,10 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
-import org.springframework.stereotype.Service;
 
-@Service
+/**
+ * This is the default implementation of {@link ShellExecutor}.
+ */
 public class DefaultShellExecutor implements ShellExecutor {
 
   @Override

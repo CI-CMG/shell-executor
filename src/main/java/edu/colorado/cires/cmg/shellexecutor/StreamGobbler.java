@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.function.Consumer;
 
-public class StreamGobbler implements Runnable {
+class StreamGobbler implements Runnable {
   private InputStream inputStream;
   private Consumer<String> consumer;
 
