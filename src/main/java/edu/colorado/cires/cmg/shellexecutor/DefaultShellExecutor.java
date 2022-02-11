@@ -32,7 +32,7 @@ public class DefaultShellExecutor implements ShellExecutor {
   @Override
   public int execute(Path workingDir, Consumer<String> outputConsumer, long timeoutMs, Map<String, String> environment, boolean clearSystemEnv, String... args)
       throws IOException, InterruptedException {
-    ProcessBuilder builder = new ProcessBuilder();
+    ProcessBuilderWrapper builder = newProcessBuilder();
     builder.command(args);
     builder.directory(workingDir.toFile());
     if (clearSystemEnv) {
@@ -55,4 +55,8 @@ public class DefaultShellExecutor implements ShellExecutor {
     }
   }
 
+  // visible for testing
+  protected ProcessBuilderWrapper newProcessBuilder(){
+    return new ProcessBuilderWrapper(new ProcessBuilder());
+  }
 }
