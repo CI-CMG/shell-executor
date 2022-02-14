@@ -4,6 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * A wrapper around the ProcessBuilder class. This allows for calls to a ProcessBuilder to
+ * be mocked for testing.
+ */
 class ProcessBuilderWrapper {
 
   private final ProcessBuilder processBuilder;
